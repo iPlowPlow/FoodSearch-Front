@@ -14,7 +14,7 @@ export class UserService {
 
   createUser(username: string, password: string, lastName: string, firstName: string): Observable<any> {
     let user = new User(username, password, lastName, firstName);
-    let url = this.config.getAppURLs("backend","base", "url") + "" + this.config.getAppURLs("backend","signup", "url");
+    let url = this.config.getAppURLs("backend","base", "url") + "" + this.config.getAppURLs("backend","user", "url");
     return this.httpClient.post(url, user);
   }
 
