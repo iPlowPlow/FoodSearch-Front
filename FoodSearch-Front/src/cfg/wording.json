@@ -1,0 +1,36 @@
+{
+    "header" : {
+        "libelles":{
+            "titre": "Food Search"
+        }
+    },
+    "form" : {
+        "libelles":{
+            "username" : "Identifiant",
+            "password" : "Mot de passe",
+            "confirmPassword" : "Confirmer le mot de passe",
+            "firstName" : "Prénom",
+            "lastName" : "Nom"
+        },
+        "errors" : {
+            "invalid" : "Champ invalide",
+            "required" : "Champ obligatoire",
+            "pwdMustMatch" : "Les deux mots de passes sont différents",
+            "pwdMinLength": "Veuillez saisir un mot de passe d'au moins 6 caractères",
+            "pwdMaxLength": "Veuillez saisir un mot de passe avec 16 caractères maximum"
+        }
+    },
+    "signup": {
+        "libelles": {
+            "title": "Inscrivez vous !",
+            "buttonConfirm" : "Valider",
+            "titleModal": "Confirmation inscription",
+            "textModal": "Votre inscription est validée !",
+            "buttonModal" : "Fermer"
+        },
+        "errors": {
+            "errorUnknown" : "Une erreur est survenue. Merci de réessayer ultérieurement.",
+            "errorUserAlreadyExist" : "Ce nom d'utilisateur n'est pas disponible"
+        }
+    }
+}

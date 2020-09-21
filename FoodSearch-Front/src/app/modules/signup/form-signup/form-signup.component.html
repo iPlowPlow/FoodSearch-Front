@@ -1,0 +1,46 @@
+<div class="form-container">
+
+    <h1> {{wording("signup","libelles","title")}} </h1>
+
+    <mat-error class="fs-24 mat-error" *ngIf="mainErrorDisplay">{{mainErrorMessage}}</mat-error>
+
+    <form [formGroup]="signupForm" >
+       
+        <mat-form-field appearance="fill">
+            <mat-label>{{wording("form","libelles","username")}}</mat-label>
+            <input matInput formControlName="username" id="username" required>
+            <mat-error *ngIf="username.invalid">{{getErrorMessage(username)}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>{{wording("form","libelles","password")}}</mat-label>
+            <input type="password" matInput formControlName="password" id="password" required>
+            <mat-error *ngIf="password.invalid">{{getErrorMessage(password)}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>{{wording("form","libelles","confirmPassword")}}</mat-label>
+            <input type="password" matInput formControlName="confirmPassword" id="confirmPassword" required>
+            <mat-error *ngIf="confirmPassword.invalid">{{getErrorMessage(confirmPassword)}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>{{wording("form","libelles","lastName")}}</mat-label>
+            <input matInput formControlName="lastName" id="lastName" required>
+            <mat-error *ngIf="lastName.invalid">{{getErrorMessage(lastName)}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>{{wording("form","libelles","firstName")}}</mat-label>
+            <input matInput formControlName="firstName" id="firstName" required>
+            <mat-error *ngIf="firstName.invalid">{{getErrorMessage(firstName)}}</mat-error>
+        </mat-form-field>
+
+       <div class="center-div" >
+            <button mat-raised-button color="primary" class="button-primary" (click)="submitForm()" [disabled]="isDisabled" >{{wording("signup","libelles","buttonConfirm")}}</button>
+       </div>
+        
+        
+    </form>
+</div>
+

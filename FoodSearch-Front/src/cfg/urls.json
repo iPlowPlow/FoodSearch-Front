@@ -1,0 +1,10 @@
+{
+    "backend": {
+        "base": {
+            "url": "http://localhost:8080"
+        },
+        "signup": {
+            "url": "/signup"
+        }
+    }
+}

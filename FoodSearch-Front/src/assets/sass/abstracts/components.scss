@@ -1,0 +1,42 @@
+//Button
+.button-primary{
+    width:100px;
+}
+
+//Div
+.center-div{
+    text-align: center;
+}
+
+//Other
+.toolbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+}
+
+.toolbar span a {
+    margin: 0 16px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 25%;
+    padding-left: 25%;
+}
+
+//material
+.mat-error{
+    margin-bottom: 5px;
+}

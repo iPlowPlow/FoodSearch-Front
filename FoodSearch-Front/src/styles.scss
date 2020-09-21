@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@charset 'utf-8';
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import "./assets/sass/main";
+
+body {
+    margin:0;
+    font-family: $font-family-main;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
