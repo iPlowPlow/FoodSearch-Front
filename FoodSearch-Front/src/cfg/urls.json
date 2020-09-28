@@ -4,7 +4,10 @@
             "url": "http://localhost:8080"
         },
         "user": {
-            "url": "/user"
+            "url": "/api/public/user"
+        },
+        "authenticate" : {
+            "url": "/api/public/authenticate"
         }
     }
 }

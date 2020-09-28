@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "FoodSearch-Front"
+  "defaultProject": "FoodSearch-Front",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

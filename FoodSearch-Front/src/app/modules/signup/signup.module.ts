@@ -6,7 +6,6 @@ import { FormSignupComponent } from './form-signup/form-signup.component';
 import { PageSignupComponent } from './page-signup/page-signup.component';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatNativeDateModule} from '@angular/material/core';
 
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -20,7 +19,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     SignupRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatNativeDateModule,
     SharedModule,
   ],
   entryComponents: [FormSignupComponent, PageSignupComponent],

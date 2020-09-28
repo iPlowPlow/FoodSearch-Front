@@ -32,5 +32,17 @@
             "errorUnknown" : "Une erreur est survenue. Merci de réessayer ultérieurement.",
             "errorUserAlreadyExist" : "Ce nom d'utilisateur n'est pas disponible"
         }
+    },
+    "signin": {
+        "libelles": {
+            "title" : "Connexion",
+            "buttonConfirm": "connexion",
+            "signupText": "Pas encore inscrit ? Inscrivez vous ",
+            "signupLink" : "ici"
+        },
+        "errors":{
+            "errorUnknown" : "Une erreur est survenue. Merci de réessayer ultérieurement.",
+            "errorWrongUserPassword": "Identifiant/mot de passe non reconnu."
+        }
     }
 }

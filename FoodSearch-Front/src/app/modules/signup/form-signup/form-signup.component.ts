@@ -21,7 +21,7 @@ export class FormSignupComponent extends AbstractComponent implements OnInit {
   public mainErrorMessage: string;
   public isDisabled = false;
 
-  constructor(public configService: ConfigService, public dialog: MatDialog, private formBuilder: FormBuilder, 
+  constructor(public configService: ConfigService, public dialog: MatDialog, private formBuilder: FormBuilder,
     private userService: UserService, private router: Router) {
     super(configService);
   }
@@ -79,7 +79,7 @@ export class FormSignupComponent extends AbstractComponent implements OnInit {
           }
         }).afterClosed().subscribe(
           () => {
-            this.router.navigate(['/'])
+            this.router.navigateByUrl('/')
           }
         );
 
@@ -88,7 +88,7 @@ export class FormSignupComponent extends AbstractComponent implements OnInit {
         if (error.status === 400) {
           this.mainErrorMessage = this.wording("signup", "errors", "errorUserAlreadyExist");
         } else {
-          this.mainErrorMessage = this.wording("signup", "errors", "erreurUnknown");
+          this.mainErrorMessage = this.wording("signup", "errors", "errorUnknown");
         }
         this.mainErrorDisplay = true;
         this.isDisabled = false;

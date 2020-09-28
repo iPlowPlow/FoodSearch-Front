@@ -1,0 +1,31 @@
+<div class="form-container">
+
+    <h1> {{wording("signin","libelles","title")}} </h1>
+
+    <mat-error class="fs-24 mat-error" *ngIf="mainErrorDisplay">{{mainErrorMessage}}</mat-error>
+
+    <form [formGroup]="authForm">
+
+        <mat-form-field appearance="fill">
+            <mat-label>{{wording("form","libelles","username")}}</mat-label>
+            <input matInput formControlName="username" id="username" required>
+            <mat-error *ngIf="username.invalid">{{getErrorMessage(username)}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>{{wording("form","libelles","password")}}</mat-label>
+            <input type="password" matInput formControlName="password" id="password" required>
+            <mat-error *ngIf="password.invalid">{{getErrorMessage(password)}}</mat-error>
+        </mat-form-field>
+
+        <div class="center-div">
+            <button mat-raised-button color="primary" class="button-primary" (click)="submitForm()"
+                [disabled]="isDisabled">{{wording("signin","libelles","buttonConfirm")}}</button>
+        </div>
+
+        <div>
+            <p>{{wording("signin","libelles","signupText")}}<a
+                    routerLink="/signup">{{wording("signin","libelles","signupLink")}}</a></p>
+        </div>
+    </form>
+</div>
