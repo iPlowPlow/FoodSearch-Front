@@ -15,7 +15,7 @@ import { environment } from 'src/environments/environment';
     MapRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: environment.mapsApiKey,
-      libraries: ["places"]
+      libraries: ['places']
     })
   ]
 })

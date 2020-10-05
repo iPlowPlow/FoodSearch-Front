@@ -26,7 +26,8 @@ export class FormAuthComponent extends AbstractComponent implements OnInit {
   public mainErrorMessage: string;
   public isDisabled = false;
 
-  constructor(public configService: ConfigService, private userService: UserService, private router: Router, private formBuilder: FormBuilder, private store: Store<AppState>) {
+  constructor(public configService: ConfigService, private userService: UserService,
+              private router: Router, private formBuilder: FormBuilder, private store: Store<AppState>) {
     super(configService);
   }
 
@@ -45,9 +46,9 @@ export class FormAuthComponent extends AbstractComponent implements OnInit {
 
   getErrorMessage(field) {
     if (field.hasError('required')) {
-      return this.wording("form", "errors", "required");
+      return this.wording('form', 'errors', 'required');
     }
-    return this.wording("form", "errors", "invalid");
+    return this.wording('form', 'errors', 'invalid');
   }
 
   submitForm() {
@@ -70,9 +71,9 @@ export class FormAuthComponent extends AbstractComponent implements OnInit {
         noop,
         error => {
           if (error.status === 400) {
-            this.mainErrorMessage = this.wording("signin", "errors", "errorWrongUserPassword");
+            this.mainErrorMessage = this.wording('signin', 'errors', 'errorWrongUserPassword');
           } else {
-            this.mainErrorMessage = this.wording("signin", "errors", "errorUnknown");
+            this.mainErrorMessage = this.wording('signin', 'errors', 'errorUnknown');
           }
           this.mainErrorDisplay = true;
           this.isDisabled = false;

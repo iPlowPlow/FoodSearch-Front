@@ -8,15 +8,15 @@ import { MapsAPILoader } from '@agm/core';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
-  markers: marker[] = []
+  markers: Marker[] = [];
 
 
   // google maps zoom level
-  zoom: number = 15;
+  zoom = 15;
 
   // initial center position for the map
-  lat: number = 1;
-  lng: number = 1;
+  lat = 1;
+  lng = 1;
 
   constructor(private mapsAPILoader: MapsAPILoader, private locationService: LocationService) { }
 
@@ -24,7 +24,7 @@ export class MapComponent implements OnInit {
     this.locationService.getPosition().then(result => {
       this.lat = result.lat;
       this.lng = result.lng;
-    })
+    });
 
   }
 
@@ -38,26 +38,26 @@ export class MapComponent implements OnInit {
   }
 
   displayRestaurant(map: any) {
-    var myLocalisation = new google.maps.LatLng(this.lat, this.lng);
-    var request = {
+    const myLocalisation = new google.maps.LatLng(this.lat, this.lng);
+    const request = {
       location: myLocalisation,
       radius: '5000',
       type: ['restaurant']
     };
-    var service;
+    let service;
     service = new google.maps.places.PlacesService(map);
 
     service.nearbySearch(request, (results, status) => {
-      if (status == google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (const result of  results) {
           this.markers.push({
-            lat: results[i].geometry.location.lat(),
-            lng: results[i].geometry.location.lng(),
-            label: results[i].name,
-            address: results[i].vicinity,
-            star: results[i].rating,
+            lat: result.geometry.location.lat(),
+            lng: result.geometry.location.lng(),
+            label: result.name,
+            address: result.vicinity,
+            star: result.rating,
             photo: []
-          })
+          });
         }
       }
     });
@@ -69,12 +69,12 @@ export class MapComponent implements OnInit {
 
 
 // just an interface for type safety.
-interface marker {
+interface Marker {
   lat: number;
   lng: number;
   label: string;
   address: string;
   star: number;
-  photo: string[]; 
+  photo: string[];
 
 }

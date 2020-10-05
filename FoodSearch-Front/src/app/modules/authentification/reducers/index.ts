@@ -13,8 +13,8 @@ import { AuthActions } from '../actions/action-types';
 export const authFeatureKey = 'auth';
 
 export interface AuthState {
-  user: User,
-  token: string
+  user: User;
+  token: string;
 }
 
 export const initialAuthState: AuthState = {
@@ -29,6 +29,6 @@ export const authReducer = createReducer(
     return  {
       user : action.user,
       token: action.token
-    }
+    };
   })
-)
+);

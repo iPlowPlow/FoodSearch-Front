@@ -8,8 +8,7 @@ import { ConfigService } from './core/services/service-config/config.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent extends AbstractComponent {
-  
-  public title = this.wording("header","libelles","titre");
+  public title = this.wording('header', 'libelles', 'titre');
 
   constructor(configService: ConfigService){
     super(configService);

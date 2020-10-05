@@ -13,16 +13,16 @@ import { Header } from './interceptors/interceptor-json-sanitizer/header.interce
  */
 export function appWordingConfig(config: ConfigService) {
     return () => config.initWording();
-  }
-  
-  /**
-  * Init function.
-  * Load urls file.
-  * @param config configService.
-  */
-  export function appURLsConfig(config: ConfigService) {
+}
+
+/**
+ * Init function.
+ * Load urls file.
+ * @param config configService.
+ */
+export function appURLsConfig(config: ConfigService) {
     return () => config.initAppURLs();
-  }
+}
 
 
 @NgModule({
@@ -35,12 +35,12 @@ export function appWordingConfig(config: ConfigService) {
         { provide: APP_INITIALIZER, useFactory: appURLsConfig, deps: [ConfigService], multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: JsonSanitizer, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: Header, multi: true },
-      ],
+    ],
 })
 export class CoreModule {
     constructor(@Optional() @SkipSelf() core: CoreModule) {
         if (core) {
-            throw new Error("You should import core module only in the root module")
+            throw new Error('You should import core module only in the root module');
         }
     }
 }

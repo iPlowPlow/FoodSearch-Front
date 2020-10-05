@@ -8,11 +8,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ModalTextComponent implements OnInit {
 
-
-  public title : string;
-  public text : string;
-  public button : string;
-
+  public title: string;
+  public text: string;
+  public button: string;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data) { }
 

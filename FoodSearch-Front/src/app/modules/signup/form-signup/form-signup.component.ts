@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -22,7 +22,7 @@ export class FormSignupComponent extends AbstractComponent implements OnInit {
   public isDisabled = false;
 
   constructor(public configService: ConfigService, public dialog: MatDialog, private formBuilder: FormBuilder,
-    private userService: UserService, private router: Router) {
+              private userService: UserService, private router: Router) {
     super(configService);
   }
 
@@ -36,7 +36,7 @@ export class FormSignupComponent extends AbstractComponent implements OnInit {
       firstName: new FormControl('', [Validators.required]),
     },
       {
-        validators: this.customValidatorUtils.MustMatch("password", "confirmPassword")
+        validators: this.customValidatorUtils.MustMatch('password', 'confirmPassword')
       }
     );
 
@@ -50,15 +50,15 @@ export class FormSignupComponent extends AbstractComponent implements OnInit {
 
   getErrorMessage(field) {
     if (field.hasError('required')) {
-      return this.wording("form", "errors", "required");
+      return this.wording('form', 'errors', 'required');
     } else if (field.hasError('mustMatch')) {
-      return this.wording("form", "errors", "pwdMustMatch");
+      return this.wording('form', 'errors', 'pwdMustMatch');
     } else if (field.hasError('minlength')) {
-      return this.wording("form", "errors", "pwdMinLength");
+      return this.wording('form', 'errors', 'pwdMinLength');
     } else if (field.hasError('maxlength')) {
-      return this.wording("form", "errors", "pwdMaxLength");
+      return this.wording('form', 'errors', 'pwdMaxLength');
     }
-    return this.wording("form", "errors", "invalid");
+    return this.wording('form', 'errors', 'invalid');
   }
 
   submitForm() {
@@ -69,26 +69,26 @@ export class FormSignupComponent extends AbstractComponent implements OnInit {
     this.mainErrorDisplay = false;
 
     this.userService.createUser(this.username.value, this.password.value, this.lastName.value, this.firstName.value).subscribe(
-      (response: any) => {
+      () => {
 
         this.dialog.open(ModalTextComponent, {
           data: {
-            title: this.wording("signup", "libelles", "titleModal"),
-            text: this.wording("signup", "libelles", "textModal"),
-            button: this.wording("signup", "libelles", "buttonModal")
+            title: this.wording('signup', 'libelles', 'titleModal'),
+            text: this.wording('signup', 'libelles', 'textModal'),
+            button: this.wording('signup', 'libelles', 'buttonModal')
           }
         }).afterClosed().subscribe(
           () => {
-            this.router.navigateByUrl('/')
+            this.router.navigateByUrl('/');
           }
         );
 
       },
       error => {
         if (error.status === 400) {
-          this.mainErrorMessage = this.wording("signup", "errors", "errorUserAlreadyExist");
+          this.mainErrorMessage = this.wording('signup', 'errors', 'errorUserAlreadyExist');
         } else {
-          this.mainErrorMessage = this.wording("signup", "errors", "errorUnknown");
+          this.mainErrorMessage = this.wording('signup', 'errors', 'errorUnknown');
         }
         this.mainErrorDisplay = true;
         this.isDisabled = false;

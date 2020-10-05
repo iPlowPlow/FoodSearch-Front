@@ -6,10 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class ConfigService {
 
-  wordingFileURL: string = './cfg/wording.json';
+  wordingFileURL = './cfg/wording.json';
   wording: Map<string, Map<string, string>>;
 
-  urlFileURL: string = './cfg/urls.json';
+  urlFileURL = './cfg/urls.json';
   urls: Map<string, Map<string, string>>;
 
   constructor(private httpClient: HttpClient) { }
@@ -30,22 +30,22 @@ export class ConfigService {
 
   getWording(page: string, type: string, element: string): string {
     if (!this.wording) {
-      return "chargement...";
+      return 'chargement...';
     }
     if (!this.wording[page] || !this.wording[page][type] || !this.wording[page][type][element]) {
-      return "indéfini";
+      return 'indéfini';
     }
     return this.wording[page][type][element];
   }
 
   getAppURLs(app: string, type: string, url: string): string {
     if (!this.urls) {
-      return "chargement...";
+      return 'chargement...';
     }
     if (!this.urls[app] || !this.urls[app][type] || !this.urls[app][type][url]) {
-      return "indéfini";
+      return 'indéfini';
     }
-    
+
     return this.urls[app][type][url];
   }
 
