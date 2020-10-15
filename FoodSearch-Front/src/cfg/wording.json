@@ -1,7 +1,8 @@
 {
     "header" : {
         "libelles":{
-            "titre": "Food Search"
+            "title": "Food Search",
+            "logout": "Déconnexion"
         }
     },
     "form" : {

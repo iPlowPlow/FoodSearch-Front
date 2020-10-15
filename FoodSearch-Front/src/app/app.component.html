@@ -1,8 +1,7 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-
-  <span><a routerLink="/">{{wording("header","libelles","titre")}}</a></span>
-    
+  <span><a routerLink="/">{{wording("header","libelles","title")}}</a></span>
+  <span><a *ngIf="isLoggedIn$ | async" class="button-link" (click)="logout()">{{wording("header","libelles","logout")}}</a></span>
 </div>
 
 <router-outlet></router-outlet>

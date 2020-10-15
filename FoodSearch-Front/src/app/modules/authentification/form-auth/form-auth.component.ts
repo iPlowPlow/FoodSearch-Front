@@ -64,7 +64,7 @@ export class FormAuthComponent extends AbstractComponent implements OnInit {
 
           this.store.dispatch(login({ user: new User(userDTO.username, userDTO.lastName, userDTO.firstName), token: userDTO.token }));
 
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('/map');
 
         })
       ).subscribe(

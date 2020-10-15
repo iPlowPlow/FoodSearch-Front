@@ -15,6 +15,7 @@ import { entityConfig } from './entity-metadata';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { AgmCoreModule } from '@agm/core';
+import { AuthentificationModule } from './modules/authentification/authentification.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AgmCoreModule } from '@agm/core';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EntityDataModule.forRoot(entityConfig),
     EffectsModule.forRoot([]),
+    AuthentificationModule.forRoot(),
     StoreRouterConnectingModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: environment.mapsApiKey
