@@ -1,15 +1,34 @@
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" (mapClick)="mapClicked($event)" (mapReady)="displayRestaurant($event)">
-    <agm-marker 
-      *ngFor="let m of markers; let i = index"
-      [latitude]="m.lat"
-      [longitude]="m.lng"
-      >
-      
+<div class="div-map">
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false"
+  (mapReady)="initMap($event)">
+
+  <agm-marker *ngIf="myPositionMarker" [latitude]="myPositionMarker.lat" [longitude]="myPositionMarker.lng"  [iconUrl]="'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'">
+  </agm-marker>
+  <agm-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat" [longitude]="m.lng">
+
     <agm-info-window>
       <strong>{{m.label}}</strong>
       <p>{{m.address}}</p>
       <p>{{m.star}} étoiles</p>
     </agm-info-window>
-    
+
   </agm-marker>
 </agm-map>
+
+
+
+<div class="div-list">
+  <h2>{{wording("map","libelles","filterTitle")}}</h2>
+  <mat-form-field>
+    <mat-label>{{wording("map","libelles","filterTitle")}}</mat-label>
+    <mat-select [formControl]="foodForm" (selectionChange)="filter($event.value)">
+      <mat-select-trigger>
+        {{foodForm.value ? foodForm.value : ''}}
+      </mat-select-trigger>
+      <mat-option value="all">All</mat-option>
+      <mat-option *ngFor="let f of foodList" [value]="f">{{f}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+</div>

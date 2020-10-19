@@ -8,6 +8,9 @@
         },
         "authenticate" : {
             "url": "/api/public/authenticate"
+        },
+        "food" : {
+            "url": "/api/public/food"
         }
     }
 }

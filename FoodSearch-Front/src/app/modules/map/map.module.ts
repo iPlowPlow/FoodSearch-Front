@@ -6,6 +6,8 @@ import { PageMapComponent } from './page-map/page-map.component';
 import { MapComponent } from './map/map.component';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -13,6 +15,9 @@ import { environment } from 'src/environments/environment';
   imports: [
     CommonModule,
     MapRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule,
     AgmCoreModule.forRoot({
       apiKey: environment.mapsApiKey,
       libraries: ['places']

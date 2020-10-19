@@ -21,6 +21,12 @@
             "pwdMaxLength": "Veuillez saisir un mot de passe avec 16 caractères maximum"
         }
     },
+    "map": {
+        "libelles": {
+            "filterTitle": "Type de cuisine :",
+            "filterPlaceholder": ""
+        }
+    },
     "signup": {
         "libelles": {
             "title": "Inscrivez vous !",
